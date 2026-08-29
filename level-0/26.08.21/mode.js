@@ -6,73 +6,80 @@
 최빈값이 여러 개면 -1을 return 합니다.
 */
 // 반복문으로 찾기
-// function solution(array) {
-//   const count = {}
-//   for (const numbers of array) {
-//     // 각 객체의 키값 구하기
-//     count[numbers] = (count[numbers] || 0) + 1
-//   }
-
-// // 최빈키??? 구하기
-//   let maxCount = 0;
-//   let mode = 0;
-
-//   for (const num in count) {
-//     if (count[num] > maxCount) {
-//       maxCount = count[num]
-//       mode = num
-//     }
-//   }
-
-// // 조건에 따른 최빈값 구하기
-//   let modeCount = 0
-//   for (const num in count) {
-//     if (count[num] === maxCount) {
-//       modeCount++
-//     }
-//   }
-
-//   if (modeCount > 1) {
-//     return -1
-//   }
-
-//   var answer = Number(mode)
-
-//   return answer
-//   }
-
-// reduce 메서드로 찾기
-solution([1, 2, 3, 3, 4]);
 function solution(array) {
-  const count = array.reduce((acc, number) => {
-    acc[number] = (acc[number] || 0) + 1;
-    console.log(acc);
-    return acc;
-  }, {});
+  const count = {};
+  for (const numbers of array) {
+    // 각 객체의 키값 구하기
 
+    count[numbers] = (count[numbers] || 0) + 1;
+    console.log(count[numbers]);
+  }
+  console.log(count);
+
+  // 최빈키??? 구하기
   let maxCount = 0;
   let mode = 0;
-  let modeCount = 0;
 
+  // 각 키값을 maxCount에 담기
   for (const num in count) {
-    console.log(count[num]);
-
     if (count[num] > maxCount) {
-      maxCount = count[num]; // value
-      mode = num; // key
+      maxCount = count[num];
+      mode = num;
     }
   }
+
+  // 조건에 따른 최빈값 구하기
+  let modeCount = 0;
 
   for (const num in count) {
     if (count[num] === maxCount) {
       modeCount++;
     }
   }
+  console.log(modeCount);
 
   if (modeCount > 1) {
     return -1;
   }
+
   var answer = Number(mode);
 
   return answer;
 }
+solution([1, 2, 2, 3, 3, 4]);
+
+// reduce 메서드로 찾기
+// solution([1, 2, 3, 3, 4]);
+// function solution(array) {
+//   const count = array.reduce((acc, number) => {
+//     acc[number] = (acc[number] || 0) + 1;
+//     console.log(acc);
+//     return acc;
+//   }, {});
+
+//   let maxCount = 0;
+//   let mode = 0;
+//   let modeCount = 0;
+
+//   for (const num in count) {
+//     console.log(count[num]);
+
+//     if (count[num] > maxCount) {
+//       maxCount = count[num]; // value
+//       mode = num; // key
+//     }
+//   }
+
+//   for (const num in count) {
+//     if (count[num] === maxCount) {
+//       modeCount++;
+//     }
+//   }
+
+//   if (modeCount > 1) {
+//     return -1;
+//   }
+//   var answer = Number(mode);
+
+//   return answer;
+// }
