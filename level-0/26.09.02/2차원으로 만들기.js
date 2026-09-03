@@ -34,8 +34,6 @@ function solution(num_list, n) {
     answer.push(num_list.slice(i, i + n));
   }
 
-  console.log(answer);
-
   return answer;
 }
 
