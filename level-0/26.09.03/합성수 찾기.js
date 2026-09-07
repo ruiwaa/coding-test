@@ -6,8 +6,12 @@
 
 function solution(n) {
   var answer = 0;
-  // n보다 작은 수 나열
+
+  // 합성수 찾기 ( = i)
+  // n보다 작거나 같으면 1씩 증가
+
   for (let i = 1; i <= n; i++) {
+    // 합성수의 약수 찾기 ( = x)
     // 각 수 i마다 약수의 개수(=count)를 세기
     let count = 0;
     for (let x = 1; x <= i; x++) {
@@ -16,7 +20,6 @@ function solution(n) {
       }
     }
 
-    // 합성수 찾기
     if (count >= 3) {
       answer++;
     }
@@ -26,3 +29,31 @@ function solution(n) {
 }
 
 solution(10);
+
+{
+  function solution(n) {
+    var answer = 0;
+
+    for (let i = 1; i <= n; i++) {
+      let count = 0;
+      let x = 1;
+
+      while (x <= i) {
+        if (i % x === 0) {
+          count++;
+        }
+
+        x++;
+      }
+
+      if (count >= 3) {
+        answer++;
+      }
+    }
+    console.log(answer);
+
+    return answer;
+  }
+
+  solution(10);
+}

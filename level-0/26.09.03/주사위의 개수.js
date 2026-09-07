@@ -18,4 +18,4 @@ function solution(box, n) {
   return answer;
 }
 
-solution([1, 1, 1], 1);
+solution([10, 8, 6], 3);
