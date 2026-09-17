@@ -7,7 +7,6 @@ solution 함수를 완성해주세요.
 */
 
 function solution(numlist, n) {
-  var answer = [];
   const arr = numlist.sort((a, b) => {
     // n과의 차이가 가장 적게 나는 순으로 정렬
     const compareNum = Math.abs(a - n) - Math.abs(b - n);
@@ -19,9 +18,8 @@ function solution(numlist, n) {
     }
     return compareNum;
   });
-  answer.push(...arr);
 
-  return answer;
+  return arr;
 }
 
 solution([1, 2, 3, 4, 5, 6], 4);
