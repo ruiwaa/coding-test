@@ -9,10 +9,11 @@ function solution(s) {
   // 문자열 4 또는 6이 아니면 false 반환
   // 통과된 문자열에 Number로 타입을 변환시키고
   // isNaN에서 true면 false 반환
-
   if ((4 !== s.length && s.length !== 6) || isNaN(s)) answer = false;
+
+  console.log(answer);
 
   return answer;
 }
 
-solution("234");
+solution("152234");
