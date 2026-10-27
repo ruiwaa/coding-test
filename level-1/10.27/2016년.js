@@ -10,6 +10,7 @@
 
 function solution(a, b) {
   var answer = "";
+  // 월은 0부터 시작하므로, a - 1를 해준다
   const targetDate = new Date(2016, a - 1, b);
   const days = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
   answer = days[targetDate.getDay()];
