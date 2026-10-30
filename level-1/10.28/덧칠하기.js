@@ -12,7 +12,7 @@
 롤러로 페인트칠해야 하는 최소 횟수를 return 하도록 solution 함수를 완성해주세요.
 */
 
-function solution(n, m, section) {
+function solution(m, section) {
   var answer = 0;
   // section 에서
   // 이미 칠해지지 않은 구역들만
@@ -28,7 +28,6 @@ function solution(n, m, section) {
       painted = s + m - 1;
     }
   }
-  console.log(answer);
 
   return answer;
 }
