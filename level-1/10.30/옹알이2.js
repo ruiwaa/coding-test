@@ -17,14 +17,11 @@ function solution(babbling) {
   const VOWEL = ["aya", "ye", "woo", "ma"];
 
   const c = babbling.filter((b) => {
+    let word = b;
     // 연속해서 같은 발음을 말할 떄 false 반환
+    // 모음을 돌면서, 각 발음을 b에서 걷어내기
     for (const v of VOWEL) {
       if (b.includes(v.repeat(2))) return false;
-    }
-
-    // 모음을 돌면서, 각 발음을 b에서 걷어내기
-    let word = b;
-    for (const v of VOWEL) {
       word = word.replaceAll(v, " ");
     }
 
@@ -32,6 +29,7 @@ function solution(babbling) {
     if (word.trim() === "") return true;
     return false;
   });
+  console.log(c.length);
 
   return c.length;
 }
